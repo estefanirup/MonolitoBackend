@@ -31,7 +31,7 @@ docker-compose exec api dotnet ef database update
 
 | Método | Endpoint                       | Descrição                                   | Parâmetros               |
 |--------|--------------------------------|--------------------------------------------|--------------------------|
-| GET    | `/categories`                  | Lista todas as categorias                  | `page`, `pageSize` (opc) |
+| GET    | `/categories`                  | Lista todas as categorias                  | -                        |
 | GET    | `/categories/{id}`             | Obtém uma categoria pelo ID                | `id` (obrigatório)       |
 | POST   | `/categories`                  | Cria uma nova categoria                    | -                        |
 | PUT    | `/categories/{id}`             | Atualiza uma categoria existente           | `id` (obrigatório)       |
@@ -42,7 +42,7 @@ docker-compose exec api dotnet ef database update
 
 | Método | Endpoint                               | Descrição                           | Parâmetros               |
 |--------|----------------------------------------|------------------------------------|--------------------------|
-| GET    | `/products`                            | Lista todos os produtos            | `page`, `pageSize` (opc) |
+| GET    | `/products`                            | Lista todos os produtos            | -                        |
 | GET    | `/products/{id}`                       | Obtém um produto pelo ID           | `id` (obrigatório)       |
 | GET    | `/products/by-category/{categoryId}`   | Lista produtos por categoria       | `categoryId` (obrigatório) |
 | POST   | `/products`                            | Cria um novo produto               | -                        |
@@ -128,36 +128,35 @@ curl -X DELETE http://localhost:5106/api/products/1
 # Estrutura de Pastas do Projeto MonolitoBackend
 ## Visão Geral do Projeto
 MonolitoBackend/
-├── MonolitoBackend.Api/          # Camada de API
-├── MonolitoBackend.Core/         # Camada de Domínio/Núcleo
-├── MonolitoBackend.Infrastructure/ # Camada de Infraestrutura
-├── docker-compose                # Configuração Docker
-└── MonolitoBackend.sln           # Solução Visual Studio
+├── MonolitoBackend.Api/          # 🚀 Camada de API (Apresentação)
+├── MonolitoBackend.Core/         # 💡 Camada de Domínio/Núcleo
+├── MonolitoBackend.Infrastructure/ # ⚙️ Camada de Infraestrutura
+├── docker-compose.yml            # 🐳 Configuração Docker
+└── MonolitoBackend.sln           # 🔧 Solução Visual Studio
 
 ### Detalhamento por Camada
-1. MonolitoBackend.Api (Camada de Apresentação)
+1 MonolitoBackend.Api (Camada de Apresentação)
 MonolitoBackend.Api/
-├── Controllers/          # Controladores da API
-├── DTOs/                 # Objetos de Transferência de Dados
-├── Properties/           # Configurações de assembly
-├── MappingProfile/       # Configurações de mapeamento (AutoMapper)
-├── appsettings.json      # Configurações da aplicação
-├── appsettings.Development.json # Configs para ambiente de desenvolvimento
-├── MonolitoBackend.Api.http # Arquivos de teste HTTP (provavelmente)
-├── Program.cs            # Ponto de entrada da aplicação
-├── bin/                  # Binários compilados
-└── obj/                  # Objetos temporários de compilação
-2. MonolitoBackend.Core (Camada de Domínio/Núcleo)
+📂 MonolitoBackend.Api/
+├── 📂 Controllers/          # Endpoints da API
+├── 📂 DTOs/                 # Objetos de Transferência de Dados
+├── 📂 Properties/           # Configurações de assembly
+├── 📂 MappingProfiles/      # Configurações do AutoMapper
+├── 📄 appsettings.json      # Configurações globais
+├── 📄 appsettings.Development.json # Configs de desenvolvimento
+├── 📄 MonolitoBackend.Api.http # Coleção de requisições HTTP
+├── 📄 Program.cs            # Ponto de entrada
+   
+2 MonolitoBackend.Core (Camada de Domínio/Núcleo)
 MonolitoBackend.Core/
-├── Entities/             # Entidades de domínio
-├── Repositories/        # Interfaces de repositórios
-├── Services/            # Lógica de negócios/services
-├── bin/                 # Binários compilados
-└── obj/                 # Objetos temporários de compilação
-3. MonolitoBackend.Infrastructure (Camada de Infraestrutura)
+📂 MonolitoBackend.Core/
+├── 📂 Entities/             # Modelos de domínio
+├── 📂 Interfaces/           # Contratos de repositórios
+├── 📂 Services/             # Lógica de negócios
+
+3 MonolitoBackend.Infrastructure (Camada de Infraestrutura)
 MonolitoBackend.Infrastructure/
-├── Data/                # Contexto de banco de dados
-├── Migrations/         # Migrações do Entity Framework
-├── Repositories/       # Implementações concretas de repositórios
-├── bin/                # Binários compilados
-└── obj/                # Objetos temporários de compilação
+📂 MonolitoBackend.Infrastructure/
+├── 📂 Data/                # Contexto do Banco de Dados
+├── 📂 Migrations/          # Histórico de migrações
+├── 📂 Repositories/        # Implementações de repositórios

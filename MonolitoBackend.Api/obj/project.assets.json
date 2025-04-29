@@ -962,7 +962,7 @@
       "System.IO.Pipelines/9.0.4": {
         "type": "package",
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
             "related": ".xml"
           }
         },
@@ -1013,7 +1013,7 @@
       "System.Text.Encodings.Web/9.0.4": {
         "type": "package",
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net8.0/System.Text.Encodings.Web.dll": {
             "related": ".xml"
           }
         },
@@ -1039,7 +1039,7 @@
           "System.Text.Encodings.Web": "9.0.4"
         },
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net8.0/System.Text.Json.dll": {
             "related": ".xml"
           }
         },
@@ -3371,7 +3371,8 @@
       "MonolitoBackend.Core >= 1.0.0",
       "MonolitoBackend.Infrastructure >= 1.0.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.4",
-      "Swashbuckle.AspNetCore >= 8.1.1"
+      "Swashbuckle.AspNetCore >= 8.1.1",
+      "System.Text.Json >= 9.0.4"
     ]
   },
   "packageFolders": {
@@ -3441,6 +3442,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[8.1.1, )"
+          },
+          "System.Text.Json": {
+            "target": "Package",
+            "version": "[9.0.4, )"
           }
         },
         "imports": [

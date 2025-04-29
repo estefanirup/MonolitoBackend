@@ -5,6 +5,7 @@ C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\Monolito
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\MonolitoBackend.Core.AssemblyInfoInputs.cache
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\MonolitoBackend.Core.AssemblyInfo.cs
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\MonolitoBackend.Core.csproj.CoreCompileInputs.cache
+C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\MonolitoBackend.Core.sourcelink.json
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\MonolitoBackend.Core.dll
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\refint\MonolitoBackend.Core.dll
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\MonolitoBackend.Core.pdb

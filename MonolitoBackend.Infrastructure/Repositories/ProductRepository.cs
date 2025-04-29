@@ -11,8 +11,11 @@ public class ProductRepository(AppDbContext context) : IProductRepository
 
     public async Task<IEnumerable<Product>> GetAllAsync()
     {
-        return await _context.Products.ToListAsync();
+        return await _context.Products
+            .Include(p => p.Category)  
+            .ToListAsync();
     }
+
 
     public async Task<Product?> GetByIdAsync(int id)
     {

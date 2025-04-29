@@ -123,6 +123,7 @@ C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\obj\Debug\net8.0\MonolitoB
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\obj\Debug\net8.0\MonolitoBackend.Api.csproj.CoreCompileInputs.cache
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\obj\Debug\net8.0\MonolitoBackend.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\obj\Debug\net8.0\MonolitoBackend.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\obj\Debug\net8.0\MonolitoBackend.Api.sourcelink.json
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\obj\Debug\net8.0\staticwebassets\msbuild.MonolitoBackend.Api.Microsoft.AspNetCore.StaticWebAssets.props

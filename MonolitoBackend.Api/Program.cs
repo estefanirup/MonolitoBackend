@@ -1,12 +1,21 @@
 using Microsoft.EntityFrameworkCore;
 using MonolitoBackend.Infrastructure.Data;
 using MonolitoBackend.Core.Repositories;
+using MonolitoBackend.Core.Services;
 using MonolitoBackend.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configuração do DbContext
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+Console.WriteLine($"\n\nCONNECTION STRING BEING USED:\n{connectionString}\n\n");
+
+if (string.IsNullOrEmpty(connectionString))
+{
+    throw new Exception("Connection string 'DefaultConnection' not found.");
+}
+
+connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options => 
     options.UseNpgsql(connectionString));
 
@@ -14,13 +23,22 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
+// Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Registro dos services
+builder.Services.AddScoped<CategoryService>();
+builder.Services.AddScoped<ProductService>();
+
 var app = builder.Build();
 
-
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 // Aplicar migrações do banco de dados
 using (var scope = app.Services.CreateScope())
@@ -30,13 +48,7 @@ using (var scope = app.Services.CreateScope())
     context.Database.Migrate();
 }
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 

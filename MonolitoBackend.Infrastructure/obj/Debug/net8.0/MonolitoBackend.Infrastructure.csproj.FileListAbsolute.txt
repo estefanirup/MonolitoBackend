@@ -9,6 +9,7 @@ C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Infrastructure\obj\Debug\net8.
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.AssemblyInfo.cs
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.sourcelink.json
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Infrastructure\obj\Debug\net8.0\Monolito.54C886CD.Up2Date
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Infrastructure\obj\Debug\net8.0\MonolitoBackend.Infrastructure.dll
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Infrastructure\obj\Debug\net8.0\refint\MonolitoBackend.Infrastructure.dll

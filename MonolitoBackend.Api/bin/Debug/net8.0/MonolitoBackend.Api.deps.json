@@ -13,7 +13,8 @@
           "MonolitoBackend.Core": "1.0.0",
           "MonolitoBackend.Infrastructure": "1.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
-          "Swashbuckle.AspNetCore": "8.1.1"
+          "Swashbuckle.AspNetCore": "8.1.1",
+          "System.Text.Json": "9.0.4"
         },
         "runtime": {
           "MonolitoBackend.Api.dll": {}

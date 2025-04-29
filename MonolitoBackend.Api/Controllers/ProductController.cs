@@ -2,97 +2,104 @@ using Microsoft.AspNetCore.Mvc;
 using MonolitoBackend.Api.DTOs;
 using MonolitoBackend.Core.Entities;
 using MonolitoBackend.Core.Services;
+using AutoMapper;
 
-using System.Text.Json;
-
-namespace MonolitoBackend.Api.Controllers;
-
-[ApiController]
-[Route("api/products")]
-public class ProductsController : ControllerBase
+namespace MonolitoBackend.Api.Controllers
 {
-    private readonly ProductService _productService;
-
-    public ProductsController(ProductService productService)
+    [ApiController]
+    [Route("api/products")]
+    public class ProductsController : ControllerBase
     {
-        _productService = productService;
-    }
+        private readonly ProductService _productService;
+        private readonly IMapper _mapper;
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Product>>> GetAll()
-    {
-        var products = await _productService.GetAllProductsAsync();
-
-        var jsonOptions = new JsonSerializerOptions
+        public ProductsController(ProductService productService, IMapper mapper)
         {
-            ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve,
-            MaxDepth = 64 
-        };
+            _productService = productService;
+            _mapper = mapper;
+        }
 
-        return Ok(JsonSerializer.Serialize(products, jsonOptions));
-    }
-
-    [HttpGet("{id:int}")]
-    public async Task<ActionResult<Product>> GetById(int id)
-    {
-        var product = await _productService.GetProductByIdAsync(id);
-
-        if (product == null)
-            return NotFound();
-
-        return Ok(product);
-    }
-
-    [HttpGet("by-category/{categoryId:int}")]
-    public async Task<ActionResult<IEnumerable<Product>>> GetByCategoryId(int categoryId)
-    {
-        var products = await _productService.GetProductsByCategoryIdAsync(categoryId);
-        return Ok(products);
-    }
-
-    [HttpPost]
-    public async Task<ActionResult> Create([FromBody] ProductDTO productDTO)
-    {
-        if (!ModelState.IsValid)
-            return BadRequest(ModelState);
-
-        var product = new Product
+        // Get all products
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ProductDTO>>> GetAll()
         {
-            Name = productDTO.Name,
-            Price = productDTO.Price,
-            CategoryId = productDTO.CategoryId
-        };
+            var products = await _productService.GetAllProductsAsync();
 
-        await _productService.AddProductAsync(product);
-        return CreatedAtAction(nameof(GetById), new { id = product.Id }, product);
-    }
+            var productDtos = _mapper.Map<IEnumerable<ProductDTO>>(products);
 
-    [HttpPut("{id:int}")]
-    public async Task<ActionResult> Update(int id, [FromBody] ProductDTO productDTO)
-    {
-        if (!ModelState.IsValid)
-            return BadRequest(ModelState);
+            return Ok(productDtos);
+        }
 
-        var existingProduct = await _productService.GetProductByIdAsync(id);
-        if (existingProduct == null)
-            return NotFound();
+        // Get a product by id
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<ProductDTO>> GetById(int id)
+        {
+            var product = await _productService.GetProductByIdAsync(id);
 
-        existingProduct.Name = productDTO.Name;
-        existingProduct.Price = productDTO.Price;
-        existingProduct.CategoryId = productDTO.CategoryId;
+            if (product == null)
+                return NotFound();
 
-        await _productService.UpdateProductAsync(existingProduct);
-        return NoContent();
-    }
+            var productDto = _mapper.Map<ProductDTO>(product);
+            return Ok(productDto);
+        }
 
-    [HttpDelete("{id:int}")]
-    public async Task<ActionResult> Delete(int id)
-    {
-        var product = await _productService.GetProductByIdAsync(id);
-        if (product == null)
-            return NotFound();
+        // Get all products by category
+        [HttpGet("by-category/{categoryId:int}")]
+        public async Task<ActionResult<IEnumerable<ProductDTO>>> GetAllProductsByCategory(int categoryId)
+        {
+            var products = await _productService.GetProductsByCategoryIdAsync(categoryId);
 
-        await _productService.DeleteProductAsync(id);
-        return NoContent();
+            if (products == null || !products.Any())
+                return NotFound();
+
+            var productDtos = _mapper.Map<IEnumerable<ProductDTO>>(products);
+            return Ok(productDtos);
+        }
+
+        // Create a new product
+        [HttpPost]
+        public async Task<ActionResult> Create([FromBody] ProductDTO productDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var product = _mapper.Map<Product>(productDTO);
+
+            await _productService.AddProductAsync(product);
+
+            var createdProductDto = _mapper.Map<ProductDTO>(product);
+
+            return CreatedAtAction(nameof(GetById), new { id = product.Id }, createdProductDto);
+        }
+
+        // Update a product by id
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> Update(int id, [FromBody] ProductDTO productDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var existingProduct = await _productService.GetProductByIdAsync(id);
+            if (existingProduct == null)
+                return NotFound();
+
+            _mapper.Map(productDTO, existingProduct);
+
+            await _productService.UpdateProductAsync(existingProduct);
+
+            return NoContent();
+        }
+
+        // Delete a product by id
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var product = await _productService.GetProductByIdAsync(id);
+            if (product == null)
+                return NotFound();
+
+            await _productService.DeleteProductAsync(id);
+            return NoContent();
+        }
     }
 }

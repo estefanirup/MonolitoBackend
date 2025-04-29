@@ -3,8 +3,12 @@ using MonolitoBackend.Infrastructure.Data;
 using MonolitoBackend.Core.Repositories;
 using MonolitoBackend.Core.Services;
 using MonolitoBackend.Infrastructure.Repositories;
+using AutoMapper;
+using MonolitoBackend.Api;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAutoMapper(typeof(MonolitoBackend.Api.MappingProfile)); 
 
 // Configuração do DbContext
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -14,6 +18,8 @@ if (string.IsNullOrEmpty(connectionString))
 {
     throw new Exception("Connection string 'DefaultConnection' not found.");
 }
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options => 

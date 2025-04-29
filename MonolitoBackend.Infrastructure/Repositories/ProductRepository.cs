@@ -5,17 +5,21 @@ using MonolitoBackend.Infrastructure.Data;
 
 namespace MonolitoBackend.Infrastructure.Repositories;
 
-public class ProductRepository(AppDbContext context) : IProductRepository
+public class ProductRepository : IProductRepository
 {
-    private readonly AppDbContext _context = context;
+    private readonly AppDbContext _context;
+
+    public ProductRepository(AppDbContext context)
+    {
+        _context = context;
+    }
 
     public async Task<IEnumerable<Product>> GetAllAsync()
     {
         return await _context.Products
-            .Include(p => p.Category)  
+            .Include(p => p.Category)
             .ToListAsync();
     }
-
 
     public async Task<Product?> GetByIdAsync(int id)
     {
@@ -44,7 +48,7 @@ public class ProductRepository(AppDbContext context) : IProductRepository
         }
     }
 
-    public async Task<IEnumerable<Product>> GetByCategoryIdAsync(int categoryId)
+    public async Task<IEnumerable<Product>> GetProductsByCategoryIdAsync(int categoryId)
     {
         return await _context.Products
             .Where(p => p.CategoryId == categoryId)

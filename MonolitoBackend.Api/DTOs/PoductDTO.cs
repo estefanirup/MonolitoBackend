@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using static MonolitoBackend.Api.DTOs.CategoryDTO;
 
 namespace MonolitoBackend.Api.DTOs;
 
@@ -14,4 +15,6 @@ public class ProductDTO
 
     [Required(ErrorMessage = "ATENÇÃO: A categoria é obrigatória!")]
     public int CategoryId { get; set; }
+
+    public CategoryDTO Category { get; set; } = null!;
 }

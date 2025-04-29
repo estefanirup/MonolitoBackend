@@ -125,38 +125,52 @@ curl -X PUT http://localhost:5106/api/products/1     -H "Content-Type: applicati
 #### Exemplo de requisição DELETE para remover um produto pelo ID
 curl -X DELETE http://localhost:5106/api/products/1
 
-# Estrutura de Pastas do Projeto MonolitoBackend
-## Visão Geral do Projeto
-MonolitoBackend/
-├── MonolitoBackend.Api/          # 🚀 Camada de API (Apresentação)
-├── MonolitoBackend.Core/         # 💡 Camada de Domínio/Núcleo
-├── MonolitoBackend.Infrastructure/ # ⚙️ Camada de Infraestrutura
-├── docker-compose.yml            # 🐳 Configuração Docker
-└── MonolitoBackend.sln           # 🔧 Solução Visual Studio
+# Visão Geral do Projeto
 
-### Detalhamento por Camada
-1 MonolitoBackend.Api (Camada de Apresentação)
-MonolitoBackend.Api/
-📂 MonolitoBackend.Api/
-├── 📂 Controllers/          # Endpoints da API
-├── 📂 DTOs/                 # Objetos de Transferência de Dados
-├── 📂 Properties/           # Configurações de assembly
-├── 📂 MappingProfiles/      # Configurações do AutoMapper
-├── 📄 appsettings.json      # Configurações globais
-├── 📄 appsettings.Development.json # Configs de desenvolvimento
-├── 📄 MonolitoBackend.Api.http # Coleção de requisições HTTP
-├── 📄 Program.cs            # Ponto de entrada
-   
-2 MonolitoBackend.Core (Camada de Domínio/Núcleo)
-MonolitoBackend.Core/
-📂 MonolitoBackend.Core/
-├── 📂 Entities/             # Modelos de domínio
-├── 📂 Interfaces/           # Contratos de repositórios
-├── 📂 Services/             # Lógica de negócios
+**MonolitoBackend/**  
+A estrutura do projeto é dividida em três camadas principais:
 
-3 MonolitoBackend.Infrastructure (Camada de Infraestrutura)
-MonolitoBackend.Infrastructure/
-📂 MonolitoBackend.Infrastructure/
-├── 📂 Data/                # Contexto do Banco de Dados
-├── 📂 Migrations/          # Histórico de migrações
-├── 📂 Repositories/        # Implementações de repositórios
+- **MonolitoBackend.Api** 🚀  - Camada de Apresentação (API)
+- **MonolitoBackend.Core** 💡 - Camada de Domínio/Núcleo
+- **MonolitoBackend.Infrastructure** ⚙️ - Camada de Infraestrutura
+
+Outros arquivos importantes:
+- **docker-compose.yml** 🐳 - Configuração do Docker
+- **MonolitoBackend.sln** 🔧 - Solução Visual Studio
+
+---
+
+# Estrutura Detalhada por Camada
+
+## 1. **MonolitoBackend.Api** (Camada de Apresentação)
+
+Caminho: `MonolitoBackend.Api/`
+
+- 📂 **Controllers/** - Endpoints da API
+- 📂 **DTOs/** - Objetos de Transferência de Dados
+- 📂 **Properties/** - Configurações de assembly
+- 📂 **MappingProfiles/** - Configurações do AutoMapper
+- 📄 **appsettings.json** - Configurações globais
+- 📄 **appsettings.Development.json** - Configurações de desenvolvimento
+- 📄 **MonolitoBackend.Api.http** - Coleção de requisições HTTP
+- 📄 **Program.cs** - Ponto de entrada
+
+---
+
+## 2. **MonolitoBackend.Core** (Camada de Domínio/Núcleo)
+
+Caminho: `MonolitoBackend.Core/`
+
+- 📂 **Entities/** - Modelos de domínio
+- 📂 **Interfaces/** - Contratos de repositórios
+- 📂 **Services/** - Lógica de negócios
+
+---
+
+## 3. **MonolitoBackend.Infrastructure** (Camada de Infraestrutura)
+
+Caminho: `MonolitoBackend.Infrastructure/`
+
+- 📂 **Data/** - Contexto do Banco de Dados
+- 📂 **Migrations/** - Histórico de migrações
+- 📂 **Repositories/** - Implementações de repositórios

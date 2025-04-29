@@ -18,7 +18,9 @@ public class ProductService(IProductRepository productRepository)
     }
 
     public async Task<Product?> GetProductByIdAsync(int id)
-        => await _productRepository.GetByIdAsync(id);
+    {
+        return await _productRepository.GetByIdAsync(id);
+    }
 
     public async Task AddProductAsync(Product product)
         => await _productRepository.AddAsync(product);

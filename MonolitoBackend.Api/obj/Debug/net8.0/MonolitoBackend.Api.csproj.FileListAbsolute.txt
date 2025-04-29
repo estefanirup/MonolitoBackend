@@ -5,6 +5,8 @@ C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\bin\Debug\net8.0\MonolitoB
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\bin\Debug\net8.0\MonolitoBackend.Api.runtimeconfig.json
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\bin\Debug\net8.0\MonolitoBackend.Api.dll
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\bin\Debug\net8.0\MonolitoBackend.Api.pdb
+C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -138,5 +140,3 @@ C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\obj\Debug\net8.0\refint\Mo
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\obj\Debug\net8.0\MonolitoBackend.Api.pdb
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\obj\Debug\net8.0\MonolitoBackend.Api.genruntimeconfig.cache
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\obj\Debug\net8.0\ref\MonolitoBackend.Api.dll
-C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\bin\Debug\net8.0\AutoMapper.dll
-C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

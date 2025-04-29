@@ -8,15 +8,14 @@ namespace MonolitoBackend.Api
     {
         public MappingProfile()
         {
-            CreateMap<Product, ProductDTO>()
-                .ForMember(dest => dest.Category, opt => opt.MapFrom(src => new CategoryDTO
-                {
-                    Name = src.Category.Name,
-                    Description = src.Category.Description
-                }));
+            // Saída (GET)
+            CreateMap<Product, ProductDTO>() // CRIA UM MAPEAMENTO ENTRE DOIS TIPOS
+                .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category)); // ESPECIFICA COMO MAPEAR ESSE CAMPO EM ESPECÍFICO
+            CreateMap<Category, CategoryDTO>();
 
-            CreateMap<ProductDTO, Product>()
-                .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.CategoryId));
+            // Entrada (POST/PUT)
+            CreateMap<ProductCreateOrUpdateDTO, Product>();
+            CreateMap<CategoryDTO, Category>(); 
         }
     }
 }

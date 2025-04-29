@@ -19,7 +19,6 @@ namespace MonolitoBackend.Api.Controllers
             _mapper = mapper;
         }
 
-        // Get all products
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductDTO>>> GetAll()
         {
@@ -30,7 +29,6 @@ namespace MonolitoBackend.Api.Controllers
             return Ok(productDtos);
         }
 
-        // Get a product by id
         [HttpGet("{id:int}")]
         public async Task<ActionResult<ProductDTO>> GetById(int id)
         {
@@ -41,9 +39,9 @@ namespace MonolitoBackend.Api.Controllers
 
             var productDto = _mapper.Map<ProductDTO>(product);
             return Ok(productDto);
+
         }
 
-        // Get all products by category
         [HttpGet("by-category/{categoryId:int}")]
         public async Task<ActionResult<IEnumerable<ProductDTO>>> GetAllProductsByCategory(int categoryId)
         {
@@ -56,9 +54,8 @@ namespace MonolitoBackend.Api.Controllers
             return Ok(productDtos);
         }
 
-        // Create a new product
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] ProductDTO productDTO)
+        public async Task<ActionResult> Create([FromBody] ProductCreateOrUpdateDTO productDTO)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -72,9 +69,8 @@ namespace MonolitoBackend.Api.Controllers
             return CreatedAtAction(nameof(GetById), new { id = product.Id }, createdProductDto);
         }
 
-        // Update a product by id
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> Update(int id, [FromBody] ProductDTO productDTO)
+        public async Task<ActionResult> Update(int id, [FromBody] ProductCreateOrUpdateDTO productDTO)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -90,7 +86,6 @@ namespace MonolitoBackend.Api.Controllers
             return NoContent();
         }
 
-        // Delete a product by id
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {

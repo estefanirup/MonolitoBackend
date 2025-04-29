@@ -7,6 +7,6 @@ namespace MonolitoBackend.Core.Entities
         public string? Description { get; set; }
 
         // Relacionamento um para muitos
-        public ICollection<Product> Products { get; set; } = new List<Product>();
+        public ICollection<Product> Products { get; set; } = new List<Product>(); // verificar category DTO!!!!!
     }
 }

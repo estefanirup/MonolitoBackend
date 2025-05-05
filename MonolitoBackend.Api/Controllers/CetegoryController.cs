@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MonolitoBackend.Api.DTOs;
 using MonolitoBackend.Core.Entities;
@@ -17,13 +18,29 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Category>>> GetAll()
+    [AllowAnonymous]
+    public async Task<ActionResult<IEnumerable<CategoryWithProductsDTO>>> GetAll()
     {
         var categories = await _categoryService.GetAllCategoriesAsync();
-        return Ok(categories);
+
+        var categoryDTOs = categories.Select(category => new CategoryWithProductsDTO
+        {
+            Id = category.Id,
+            Name = category.Name,
+            Description = category.Description,
+            Products = category.Products.Select(p => new ProductDTO
+            {
+                Name = p.Name,
+                Price = p.Price
+            }).ToList()
+        });
+
+        return Ok(categoryDTOs);
     }
 
+
     [HttpGet("{id:int}")]
+    [Authorize(Roles = "Client")] 
     public async Task<ActionResult<Category>> GetById(int id)
     {
         var category = await _categoryService.GetCategoryByIdAsync(id);
@@ -35,6 +52,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin")] 
     public async Task<ActionResult> Create([FromBody] CategoryDTO categoryDTO)
     {
         if (!ModelState.IsValid)
@@ -51,6 +69,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
+    [Authorize(Roles = "Admin")] 
     public async Task<ActionResult> Update(int id, [FromBody] CategoryDTO categoryDTO)
     {
         if (!ModelState.IsValid)
@@ -68,6 +87,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
+    [Authorize(Roles = "Admin")] 
     public async Task<ActionResult> Delete(int id)
     {
         var category = await _categoryService.GetCategoryByIdAsync(id);

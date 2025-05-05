@@ -11,12 +11,16 @@ public class CategoryRepository(AppDbContext context) : ICategoryRepository
 
     public async Task<IEnumerable<Category>> GetAllAsync()
     {
-        return await _context.Categories.ToListAsync();
+        return await _context.Categories
+            .Include(c => c.Products) // Carrega os produtos relacionados
+            .ToListAsync();
     }
 
     public async Task<Category?> GetByIdAsync(int id)
     {
-        return await _context.Categories.FindAsync(id);
+        return await _context.Categories
+            .Include(c => c.Products)
+            .FirstOrDefaultAsync(c => c.Id == id);
     }
 
     public async Task AddAsync(Category category)

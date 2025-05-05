@@ -10,3 +10,4 @@ C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\Monolito
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\refint\MonolitoBackend.Core.dll
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\MonolitoBackend.Core.pdb
 C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\ref\MonolitoBackend.Core.dll
+C:\Users\Estefani\MonolitoBackend\MonolitoBackend.Core\obj\Debug\net8.0\MonolitoBackend.Core.csproj.AssemblyReference.cache

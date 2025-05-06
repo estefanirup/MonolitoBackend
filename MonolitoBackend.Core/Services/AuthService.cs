@@ -21,12 +21,20 @@ namespace MonolitoBackend.Core.Services
                 return null;
             }
 
+            Console.WriteLine($"Gerando token para: {user.Username}");
             return GenerateJwtToken(user);
         }
 
         private string GenerateJwtToken(User user)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Secret"]));
+            // Verificação de null para a chave JWT
+            var jwtSecret = _configuration["Jwt:Secret"] ?? throw new InvalidOperationException("JWT Secret is not configured.");
+            
+            Console.WriteLine($"Jwt:Secret length: {jwtSecret.Length}");
+            Console.WriteLine($"Jwt:Issuer: {_configuration["Jwt:Issuer"]}");
+            Console.WriteLine($"Jwt:Audience: {_configuration["Jwt:Audience"]}");
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
@@ -44,7 +52,9 @@ namespace MonolitoBackend.Core.Services
                 signingCredentials: credentials
             );
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+            Console.WriteLine($"Token gerado: {tokenString}");
+            return tokenString;
         }
 
         public async Task RegisterUser(string username, string role, string password)

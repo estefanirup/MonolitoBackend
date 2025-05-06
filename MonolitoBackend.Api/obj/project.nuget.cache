@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2c9gRcMsNW0=",
+  "dgSpecHash": "n2EDzN7fHV0=",
   "success": true,
   "projectFilePath": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Api\\MonolitoBackend.Api.csproj",
   "expectedPackageFiles": [
@@ -43,7 +43,7 @@
     "C:\\Users\\Estefani\\.nuget\\packages\\microsoft.identitymodel.protocols\\7.1.2\\microsoft.identitymodel.protocols.7.1.2.nupkg.sha512",
     "C:\\Users\\Estefani\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.1.2\\microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
     "C:\\Users\\Estefani\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.9.0\\microsoft.identitymodel.tokens.8.9.0.nupkg.sha512",
-    "C:\\Users\\Estefani\\.nuget\\packages\\microsoft.openapi\\1.6.23\\microsoft.openapi.1.6.23.nupkg.sha512",
+    "C:\\Users\\Estefani\\.nuget\\packages\\microsoft.openapi\\1.6.24\\microsoft.openapi.1.6.24.nupkg.sha512",
     "C:\\Users\\Estefani\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\Estefani\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
     "C:\\Users\\Estefani\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.4\\npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",

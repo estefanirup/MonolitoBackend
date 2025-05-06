@@ -52,7 +52,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize(Roles = "Admin")] 
+    [Authorize] 
     public async Task<ActionResult> Create([FromBody] CategoryDTO categoryDTO)
     {
         if (!ModelState.IsValid)

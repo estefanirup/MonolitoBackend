@@ -1,0 +1,13 @@
+using MonolitoBackend.Core.Entities;
+
+namespace MonolitoBackend.Core.Repositories;
+
+public interface IProductRepository
+{
+    Task<IEnumerable<Product>> GetAllAsync();
+    Task<Product?> GetByIdAsync(int id);
+    Task AddAsync(Product product);
+    Task UpdateAsync(Product product);
+    Task DeleteAsync(int id);
+    Task<IEnumerable<Product>> GetProductsByCategoryIdAsync(int categoryId);
+}

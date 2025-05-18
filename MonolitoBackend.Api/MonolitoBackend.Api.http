@@ -1,0 +1,26 @@
+@host = http://localhost:8080
+
+### Login
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "estefani",
+  "password": "123"
+}
+
+### Listar categorias (sem autenticação)
+GET {{host}}/api/categories
+Accept: application/json
+
+### Listar categorias (com autenticação)
+POST {{host}}/api/categories
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4NDlkZWE2Mi01NjlmLTQxZmUtOGU1OS04YzcwYmMwMTgzNGUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZXN0ZWZhbmkiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsImV4cCI6MTc0NjU0ODg5OSwiaXNzIjoiTW9ub2xpdG9BUEkiLCJhdWQiOiJNb25vbGl0b0Zyb250ZW5kIn0.w_AhdvKe3Fnal_io2QEKROOGIh3tmm8T0gOzpb7i3kk
+
+{
+  "name": "teste",
+  "description": "teste"
+}
+###

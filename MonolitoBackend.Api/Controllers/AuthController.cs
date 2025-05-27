@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MonolitoBackend.Core.Services;
 
@@ -15,7 +16,8 @@ namespace MonolitoBackend.Api.Controllers
             _authService = authService;
         }
 
-        [HttpPost("login")]
+        [AllowAnonymous]
+        [HttpPost("login")] //ENDPOINT DE LOGIN
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             var token = await _authService.AuthenticateAsync(request.Username, request.Password);
@@ -25,7 +27,8 @@ namespace MonolitoBackend.Api.Controllers
             return Ok(new { token });
         }
 
-        [HttpPost("register")]
+        [AllowAnonymous]
+        [HttpPost("register")] //ENDPOINT DE REGISTER
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
             await _authService.RegisterUser(request.Username, request.Role, request.Password);

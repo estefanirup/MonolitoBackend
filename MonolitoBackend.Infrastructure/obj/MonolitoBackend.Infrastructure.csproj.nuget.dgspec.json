@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Infrastructure\\MonolitoBackend.Infrastructure.csproj": {}
+    "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Infrastructure\\MonolitoBackend.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj": {
+    "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj",
         "projectName": "MonolitoBackend.Core",
-        "projectPath": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj",
+        "projectPath": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj",
         "packagesPath": "C:\\Users\\Estefani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Core\\obj\\",
+        "outputPath": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Estefani\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -77,14 +77,14 @@
         }
       }
     },
-    "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Infrastructure\\MonolitoBackend.Infrastructure.csproj": {
+    "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Infrastructure\\MonolitoBackend.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Infrastructure\\MonolitoBackend.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Infrastructure\\MonolitoBackend.Infrastructure.csproj",
         "projectName": "MonolitoBackend.Infrastructure",
-        "projectPath": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Infrastructure\\MonolitoBackend.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Infrastructure\\MonolitoBackend.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Estefani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Estefani\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -100,8 +100,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj": {
-                "projectPath": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj"
+              "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj": {
+                "projectPath": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj"
               }
             }
           }

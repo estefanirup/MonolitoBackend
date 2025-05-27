@@ -12,6 +12,19 @@ builder.WebHost.UseUrls("http://0.0.0.0:8080");
 // ---------- Serviços da aplicação (inclui DB, JWT, AutoMapper, repositórios e serviços) ----------
 builder.Services.AddApplicationServices(builder.Configuration);
 
+// ---------- Configurando CORS ----------
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontends", policy =>
+        policy.WithOrigins(
+            "http://localhost:5500", // Login HTML
+            "http://localhost:5173"  // React
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod());
+});
+
+
 // ---------- Swagger ----------
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -59,6 +72,11 @@ using (var scope = app.Services.CreateScope())
 }
 
 // ---------- Middlewares ----------
+app.UseRouting();
+
+app.UseCors("AllowFrontends");
+
+
 app.UseAuthentication();
 app.UseAuthorization();
 

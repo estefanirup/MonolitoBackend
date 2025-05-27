@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cs/sSjw7Uxw=",
+  "dgSpecHash": "vX2ERL48le4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj",
+  "projectFilePath": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Estefani\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Estefani\\.nuget\\packages\\microsoft.bcl.memory\\9.0.0\\microsoft.bcl.memory.9.0.0.nupkg.sha512",

@@ -18,7 +18,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpGet]
-    [AllowAnonymous]
+    [Authorize]
     public async Task<ActionResult<IEnumerable<CategoryWithProductsDTO>>> GetAll()
     {
         var categories = await _categoryService.GetAllCategoriesAsync();
@@ -40,7 +40,7 @@ public class CategoriesController : ControllerBase
 
 
     [HttpGet("{id:int}")]
-    [Authorize(Roles = "Client")] 
+    [Authorize(Roles = "Client")]
     public async Task<ActionResult<Category>> GetById(int id)
     {
         var category = await _categoryService.GetCategoryByIdAsync(id);
@@ -52,7 +52,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize] 
+    [Authorize]
     public async Task<ActionResult> Create([FromBody] CategoryDTO categoryDTO)
     {
         if (!ModelState.IsValid)
@@ -69,7 +69,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
-    [Authorize(Roles = "Admin")] 
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult> Update(int id, [FromBody] CategoryDTO categoryDTO)
     {
         if (!ModelState.IsValid)
@@ -87,7 +87,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    [Authorize(Roles = "Admin")] 
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult> Delete(int id)
     {
         var category = await _categoryService.GetCategoryByIdAsync(id);

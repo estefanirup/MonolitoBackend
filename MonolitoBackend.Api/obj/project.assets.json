@@ -3932,11 +3932,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Api\\MonolitoBackend.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Api\\MonolitoBackend.Api.csproj",
       "projectName": "MonolitoBackend.Api",
-      "projectPath": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Api\\MonolitoBackend.Api.csproj",
+      "projectPath": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Api\\MonolitoBackend.Api.csproj",
       "packagesPath": "C:\\Users\\Estefani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Api\\obj\\",
+      "outputPath": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Estefani\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -3952,11 +3952,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj": {
-              "projectPath": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj"
+            "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj": {
+              "projectPath": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Core\\MonolitoBackend.Core.csproj"
             },
-            "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Infrastructure\\MonolitoBackend.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Infrastructure\\MonolitoBackend.Infrastructure.csproj"
+            "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Infrastructure\\MonolitoBackend.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Infrastructure\\MonolitoBackend.Infrastructure.csproj"
             }
           }
         }

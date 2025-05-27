@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BjTzBIO+F5w=",
+  "dgSpecHash": "MzXOQ7NZsiQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Estefani\\MonolitoBackend\\MonolitoBackend.Api\\MonolitoBackend.Api.csproj",
+  "projectFilePath": "C:\\Users\\Estefani\\MonolitoBackendLimpo\\MonolitoBackend.Api\\MonolitoBackend.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Estefani\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Estefani\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

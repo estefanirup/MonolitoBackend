@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MonolitoBackend.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c48018381eb7c1e671d58334cb8b6c9634e1eb1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d697da7caf23b86ac6150ad1c785441dc98d5855")]
 [assembly: System.Reflection.AssemblyProductAttribute("MonolitoBackend.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MonolitoBackend.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

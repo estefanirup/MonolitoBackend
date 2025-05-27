@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard | Minha Lojinha</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
+
+
+  <style>
+    body {
+      background-color: #f5f0e6;
+      font-family: 'Lora', serif;
+      color: #3a3a3a;
+      font-size: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #fff !important;
+      border-bottom: 2px solid #b79568;
+      height: 52px;
+      box-shadow: 0 1px 6px #f7b7c8;
+    }
+
+    .navbar-brand {
+      color: #2a517d !important;
+      font-weight: 400;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .navbar-brand img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    h1,
+    h2 {
+      color: #2a517d;
+      font-weight: 400;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    /* Custom Cards */
+    .card-custom {
+      color: #f7b7c8;
+      border-radius: 1rem;
+      box-shadow: 0 1px 6px rgba(165, 194, 104, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-custom:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(165, 194, 104, 0.25);
+    }
+
+    .card-footer-custom {
+      background-color: #f7b7c8;
+      color: #2a517d;
+      font-weight: 500;
+      border-top: none;
+      border-radius: 0 0 1rem 1rem;
+      text-align: right;
+    }
+
+    .btn-custom {
+      background-color: #548dbf;
+      color: #f7b7c8;
+      border-radius: 1.8rem;
+      font-weight: 400;
+      box-shadow: 0 2px 8px rgba(84, 141, 191, 0.28);
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      background-color: #2a517d;
+      box-shadow: 0 4px 12px rgba(42, 81, 125, 0.45);
+    }
+
+    .summary-number {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #548dbf;
+    }
+
+    .summary-label {
+      color: #6b584c;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
